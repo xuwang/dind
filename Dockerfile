@@ -16,7 +16,12 @@ RUN apt-get install -qqy lxc-docker
 ADD ./wrapdocker /usr/local/bin/wrapdocker
 RUN chmod +x /usr/local/bin/wrapdocker
 
+# Install the dkbuild.
+ADD ./dkbuild /usr/local/bin/dkbuild
+RUN chmod +x /usr/local/bin/dkbuild
+
 # Define additional metadata for our image.
 VOLUME /var/lib/docker
+
 CMD ["wrapdocker"]
 
