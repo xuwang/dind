@@ -51,4 +51,6 @@ docker tag $img $img_latest
 docker push $img
 docker push $img_latest
 
+# give the last push a chance to finish before exit
+sleep 5
 exit 0
