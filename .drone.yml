@@ -1,0 +1,3 @@
+image: registry-private.itlab.stanford.edu/itlab/dind
+script:
+  - dkbuild registry-private.itlab.stanford.edu/itlab/dind  /var/cache/drone/src/github.com/xuwang/dind
