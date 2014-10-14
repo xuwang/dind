@@ -27,17 +27,19 @@ docker build -t dind .
 ## Build a image in Docker
 
 ```
-git clone https://github.com/xuwang/docker-echo
-docker run --privileged -v ./docker-echo:/var/cache/docker-echo dind dkbuild xuwang/docker-echo /var/cache/docker-echo
+git clone https://github.com/xuwang/dind /tmp
+docker run --rm --privileged \
+    -v /tmp/dind:/var/cache/dind \
+    xuwang/dind dkbuild registry.docker.local/xuwang/dind /var/cache/dind
 ```
 ## Usage with [Drone.io](drone.io)
 
-_.drone.yml_
-
+With Drone.io, 
+_.drone.yml_ file for build a docker image is fairly straightforward:
 ```
 image: xuwang/dind
 script:
-  - dkbuild xuwang/docker-echo  /var/cache/drone/src/github.com/xuwang/docker-echo
+  - dkbuild registry.docker.local/xuwang/docker-echo  /var/cache/drone/src/github.com/xuwang/docker-echo
 ```
 
 
