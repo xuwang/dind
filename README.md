@@ -32,9 +32,9 @@ docker run --rm --privileged \
     -v /tmp/dind:/var/cache/dind \
     xuwang/dind dkbuild registry.docker.local/xuwang/dind /var/cache/dind
 ```
-## Usage with [Drone.io](drone.io)
+## Usage with [Drone](https://github.com/drone/drone)
 
-With Drone.io, 
+With Drone, before the native docker service is ready:
 _.drone.yml_ file for build a docker image is fairly straightforward:
 ```
 image: xuwang/dind
